@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env*.local
+.vercel/
+.DS_Store
+Thumbs.db
+.codex-tmp/
+
+# Local source exports and raw photo dumps used to build the demo.
+asw_carmenmorales/
+morales4assembly/
+stitch_modern_candidate_campaign_hub/
