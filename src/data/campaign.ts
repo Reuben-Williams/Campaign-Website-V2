@@ -25,6 +25,7 @@ export const campaignImages = {
 } as const;
 
 export const navItems = [
+  { label: "Home", href: "/" },
   { label: "Issues", href: "/issues" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
