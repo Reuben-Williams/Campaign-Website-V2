@@ -1,6 +1,8 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { CampaignImage } from "@/src/components/CampaignImage";
-import { campaignImages, endorsements, pages } from "@/src/data/campaign";
+import { T } from "@/src/components/T";
+import { campaignImages } from "@/src/data/campaign";
+import { endorsementTranslationKeys } from "@/src/data/translations";
 
 export const metadata = {
   title: "Endorsements",
@@ -13,14 +15,18 @@ export default function EndorsementsPage() {
         <div className="stack">
           <span className="eyebrow">
             <span className="signal" />
-            Coalition
+            <T k="endorsements.eyebrow" />
           </span>
-          <h1>{pages.endorsements.title}</h1>
-          <p className="lead">{pages.endorsements.summary}</p>
+          <h1>
+            <T k="endorsements.title" />
+          </h1>
+          <p className="lead">
+            <T k="endorsements.summary" />
+          </p>
         </div>
         <CampaignImage
           src={campaignImages.coalition}
-          alt="Campaign coalition event"
+          altKey="endorsements.imageAlt"
           className="compact"
           priority
         />
@@ -28,13 +34,16 @@ export default function EndorsementsPage() {
 
       <section className="section band">
         <div className="container grid three">
-          {endorsements.map((endorsement) => (
+          {endorsementTranslationKeys.map((endorsement) => (
             <article className="card" key={endorsement}>
-              <span className="icon-box">✓</span>
-              <h3>{endorsement}</h3>
+              <span className="icon-box" aria-hidden="true">
+                ✓
+              </span>
+              <h3>
+                <T k={endorsement} />
+              </h3>
               <p>
-                Final verified endorsement names and logos can be added once the
-                campaign approves publication.
+                <T k="endorsements.cardSummary" />
               </p>
             </article>
           ))}
@@ -44,14 +53,15 @@ export default function EndorsementsPage() {
       <section className="section">
         <div className="container split">
           <div className="stack">
-            <h2>Stand With Us</h2>
+            <h2>
+              <T k="endorsements.standTitle" />
+            </h2>
             <p>
-              Add your voice to the coalition supporting Carmen Morales for State
-              Assembly.
+              <T k="endorsements.standSummary" />
             </p>
           </div>
           <ButtonLink href="/volunteer" variant="secondary">
-            Endorse Carmen
+            <T k="endorsements.endorseButton" />
           </ButtonLink>
         </div>
       </section>

@@ -1,5 +1,10 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
-import { issueAreas, pages, priorities } from "@/src/data/campaign";
+import { T } from "@/src/components/T";
+import { TranslatedInitial } from "@/src/components/TranslatedInitial";
+import {
+  issueTranslationKeys,
+  priorityTranslationGroups,
+} from "@/src/data/translations";
 
 export const metadata = {
   title: "Issues",
@@ -11,19 +16,29 @@ export default function IssuesPage() {
       <section className="container stack">
         <span className="eyebrow">
           <span className="signal" />
-          Policy Priorities
+          <T k="issues.eyebrow" />
         </span>
-        <h1>{pages.issues.title}</h1>
-        <p className="lead">{pages.issues.summary}</p>
+        <h1>
+          <T k="issues.title" />
+        </h1>
+        <p className="lead">
+          <T k="issues.summary" />
+        </p>
       </section>
 
       <section className="section">
         <div className="container grid three">
-          {priorities.map((priority) => (
+          {priorityTranslationGroups.map((priority) => (
             <article className={`card ${priority.featured ? "featured" : ""}`} key={priority.title}>
-              <span className="meta">{priority.label}</span>
-              <h3>{priority.title}</h3>
-              <p>{priority.summary}</p>
+              <span className="meta">
+                <T k={priority.label} />
+              </span>
+              <h3>
+                <T k={priority.title} />
+              </h3>
+              <p>
+                <T k={priority.summary} />
+              </p>
             </article>
           ))}
         </div>
@@ -32,21 +47,24 @@ export default function IssuesPage() {
       <section className="section band">
         <div className="container">
           <div className="section-header">
-            <h2>Issue Areas</h2>
+            <h2>
+              <T k="issues.areaTitle" />
+            </h2>
             <p>
-              Each section is ready to connect to detailed policy pages once the
-              campaign has final copy.
+              <T k="issues.areaSummary" />
             </p>
           </div>
           <div className="grid three">
-            {issueAreas.map((area) => (
+            {issueTranslationKeys.map((area) => (
               <article className="card" key={area}>
-                <span className="icon-box">{area.slice(0, 1)}</span>
-                <h3>{area}</h3>
+                <span className="icon-box">
+                  <TranslatedInitial k={area} />
+                </span>
+                <h3>
+                  <T k={area} />
+                </h3>
                 <p>
-                  Final policy language can be managed from the data layer now and
-                  moved into a managed content workflow later without redesigning
-                  the page.
+                  <T k="issues.areaCardSummary" />
                 </p>
               </article>
             ))}
@@ -57,15 +75,19 @@ export default function IssuesPage() {
       <section className="section dark">
         <div className="container split">
           <div className="stack">
-            <h2>Ready to Make a Difference?</h2>
-            <p>Help the campaign reach voters and share Carmen's vision.</p>
+            <h2>
+              <T k="issues.ctaTitle" />
+            </h2>
+            <p>
+              <T k="issues.ctaSummary" />
+            </p>
           </div>
           <div className="actions">
             <ButtonLink href="/volunteer" variant="secondary">
-              Volunteer
+              <T k="nav.volunteer" />
             </ButtonLink>
             <ButtonLink href="/donate" variant="ghost">
-              Donate
+              <T k="nav.donate" />
             </ButtonLink>
           </div>
         </div>

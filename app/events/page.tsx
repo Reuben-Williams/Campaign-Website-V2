@@ -1,6 +1,8 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { CampaignImage } from "@/src/components/CampaignImage";
-import { campaignImages, events, pages } from "@/src/data/campaign";
+import { T } from "@/src/components/T";
+import { campaignImages } from "@/src/data/campaign";
+import { eventTranslationGroups } from "@/src/data/translations";
 
 export const metadata = {
   title: "Events",
@@ -13,14 +15,18 @@ export default function EventsPage() {
         <div className="stack">
           <span className="eyebrow">
             <span className="signal" />
-            Campaign Calendar
+            <T k="events.eyebrow" />
           </span>
-          <h1>{pages.events.title}</h1>
-          <p className="lead">{pages.events.summary}</p>
+          <h1>
+            <T k="events.title" />
+          </h1>
+          <p className="lead">
+            <T k="events.summary" />
+          </p>
         </div>
         <CampaignImage
           src={campaignImages.townhall}
-          alt="Community town hall event"
+          altKey="events.imageAlt"
           className="compact"
           priority
         />
@@ -28,16 +34,22 @@ export default function EventsPage() {
 
       <section className="section">
         <div className="container grid three">
-          {events.map((event) => (
+          {eventTranslationGroups.map((event) => (
             <article className="card" key={event.title}>
               <span className="meta">
-                {event.date} · {event.time}
+                <T k={event.date} /> · <T k={event.time} />
               </span>
-              <h3>{event.title}</h3>
-              <p>{event.location}</p>
-              <p>{event.summary}</p>
+              <h3>
+                <T k={event.title} />
+              </h3>
+              <p>
+                <T k={event.location} />
+              </p>
+              <p>
+                <T k={event.summary} />
+              </p>
               <ButtonLink href="/volunteer" variant="ghost">
-                RSVP
+                <T k="events.rsvp" />
               </ButtonLink>
             </article>
           ))}

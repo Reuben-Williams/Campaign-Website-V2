@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
-import { pages } from "@/src/data/campaign";
+import { T } from "@/src/components/T";
 
 export const metadata = {
   title: "Donate",
@@ -12,20 +12,27 @@ export default function DonatePage() {
         <div className="stack">
           <span className="eyebrow">
             <span className="signal" />
-            Power the Campaign
+            <T k="donate.eyebrow" />
           </span>
-          <h1>{pages.donate.title}</h1>
-          <p className="lead">{pages.donate.summary}</p>
+          <h1>
+            <T k="donate.title" />
+          </h1>
+          <p className="lead">
+            <T k="donate.summary" />
+          </p>
           <div className="card">
-            <span className="meta">Contribution Note</span>
+            <span className="meta">
+              <T k="donate.noteMeta" />
+            </span>
             <p>
-              Donation processing will connect to the campaign&apos;s approved
-              compliance and payment provider.
+              <T k="donate.noteSummary" />
             </p>
           </div>
         </div>
         <form className="form-panel" aria-label="Donation form">
-          <h2>Make a Contribution</h2>
+          <h2>
+            <T k="donate.formTitle" />
+          </h2>
           <div className="amount-grid" aria-label="Donation amount options">
             <button type="button">$25</button>
             <button type="button">$50</button>
@@ -34,20 +41,26 @@ export default function DonatePage() {
           </div>
           <div className="form-grid">
             <div className="field">
-              <label htmlFor="donor-name">Name</label>
+              <label htmlFor="donor-name">
+                <T k="donate.name" />
+              </label>
               <input id="donor-name" type="text" />
             </div>
             <div className="field">
-              <label htmlFor="donor-email">Email</label>
+              <label htmlFor="donor-email">
+                <T k="donate.email" />
+              </label>
               <input id="donor-email" type="email" />
             </div>
             <div className="field full">
-              <label htmlFor="donor-address">Address</label>
+              <label htmlFor="donor-address">
+                <T k="donate.address" />
+              </label>
               <input id="donor-address" type="text" />
             </div>
           </div>
           <ButtonLink href="/donate" variant="secondary">
-            Continue
+            <T k="donate.continue" />
           </ButtonLink>
         </form>
       </section>

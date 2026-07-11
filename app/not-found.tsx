@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
+import { T } from "@/src/components/T";
 
 export default function NotFound() {
   return (
@@ -6,16 +7,20 @@ export default function NotFound() {
       <div className="container stack">
         <span className="eyebrow">
           <span className="signal" />
-          Page Not Found
+          <T k="notFound.eyebrow" />
         </span>
-        <h1>Let&apos;s get you back to the campaign.</h1>
+        <h1>
+          <T k="notFound.title" />
+        </h1>
         <p className="lead">
-          The page you requested is not available.
+          <T k="notFound.summary" />
         </p>
         <div className="actions">
-          <ButtonLink href="/">Home</ButtonLink>
+          <ButtonLink href="/">
+            <T k="nav.home" />
+          </ButtonLink>
           <ButtonLink href="/volunteer" variant="ghost">
-            Volunteer
+            <T k="nav.volunteer" />
           </ButtonLink>
         </div>
       </div>

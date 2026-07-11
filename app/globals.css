@@ -116,6 +116,31 @@ main {
   gap: 12px;
 }
 
+.language-toggle {
+  display: inline-grid;
+  min-width: 44px;
+  height: 44px;
+  cursor: pointer;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease,
+    transform 160ms ease;
+}
+
+.language-toggle:hover {
+  border-color: var(--primary-container);
+  background: var(--primary-container);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
 .mobile-menu {
   display: none;
 }

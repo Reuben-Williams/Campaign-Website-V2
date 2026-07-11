@@ -1,31 +1,37 @@
 import { CampaignImage } from "@/src/components/CampaignImage";
+import { T } from "@/src/components/T";
+import type { TranslationKey } from "@/src/data/translations";
 
 type PageHeroProps = {
-  title: string;
-  summary: string;
+  titleKey: TranslationKey;
+  summaryKey: TranslationKey;
   image?: string;
-  imageAlt?: string;
+  imageAltKey?: TranslationKey;
 };
 
-export function PageHero({ title, summary, image, imageAlt }: PageHeroProps) {
+export function PageHero({ titleKey, summaryKey, image, imageAltKey }: PageHeroProps) {
   return (
     <section className="container hero">
       <div className="hero-copy">
         <span className="eyebrow">
           <span className="signal" />
-          Carmen Morales
+          <T k="site.eyebrowName" />
         </span>
-        <h1>{title}</h1>
-        <p className="lead">{summary}</p>
+        <h1>
+          <T k={titleKey} />
+        </h1>
+        <p className="lead">
+          <T k={summaryKey} />
+        </p>
       </div>
       {image ? (
         <CampaignImage
           src={image}
-          alt={imageAlt ?? title}
+          altKey={imageAltKey ?? titleKey}
           className="tall"
           priority
-          caption="Community-first leadership"
-          detail="Real campaign photography replaces the generated placeholders from the original export."
+          captionKey="site.mediaCaption"
+          detailKey="site.mediaDetail"
         />
       ) : null}
     </section>

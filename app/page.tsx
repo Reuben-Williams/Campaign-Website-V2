@@ -1,6 +1,9 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { CampaignImage } from "@/src/components/CampaignImage";
-import { campaignImages, pages, priorities } from "@/src/data/campaign";
+import { T } from "@/src/components/T";
+import { TranslatedInitial } from "@/src/components/TranslatedInitial";
+import { campaignImages } from "@/src/data/campaign";
+import { priorityTranslationGroups } from "@/src/data/translations";
 
 export default function HomePage() {
   return (
@@ -9,55 +12,66 @@ export default function HomePage() {
         <div className="hero-copy">
           <span className="eyebrow">
             <span className="signal" />
-            Join the Movement
+            <T k="home.eyebrow" />
           </span>
           <h1>
-            {pages.home.title}. <span className="accent">Building our future.</span>
+            <T k="home.title" />. <span className="accent"><T k="home.accent" /></span>
           </h1>
-          <p className="lead">{pages.home.summary}</p>
+          <p className="lead">
+            <T k="home.summary" />
+          </p>
           <div className="actions">
             <ButtonLink href="/donate" variant="secondary">
-              Donate Now
+              <T k="home.donateNow" />
             </ButtonLink>
             <ButtonLink href="/volunteer" variant="ghost">
-              Volunteer With Us
+              <T k="home.volunteerWithUs" />
             </ButtonLink>
           </div>
         </div>
         <CampaignImage
           src={campaignImages.hero}
-          alt="Carmen Morales with community leaders"
+          altKey="home.heroAlt"
           className="tall"
           priority
-          caption="Carmen Morales"
-          detail="Running for New Jersey State Assembly in Legislative District 34."
+          captionKey="home.heroCaption"
+          detailKey="home.heroDetail"
         />
       </section>
 
       <section className="section band">
         <div className="container grid three">
           <div className="card">
-            <span className="meta">Election Focus</span>
-            <h3>Voters First</h3>
+            <span className="meta">
+              <T k="home.card1.meta" />
+            </span>
+            <h3>
+              <T k="home.card1.title" />
+            </h3>
             <p>
-              A campaign built around direct conversations, practical priorities,
-              and clear accountability.
+              <T k="home.card1.summary" />
             </p>
           </div>
           <div className="card">
-            <span className="meta">Field Goal</span>
-            <h3>Districtwide Outreach</h3>
+            <span className="meta">
+              <T k="home.card2.meta" />
+            </span>
+            <h3>
+              <T k="home.card2.title" />
+            </h3>
             <p>
-              Volunteer teams are preparing canvasses, calls, community events,
-              and digital updates across the district.
+              <T k="home.card2.summary" />
             </p>
           </div>
           <div className="card">
-            <span className="meta">Next Step</span>
-            <h3>Get Involved</h3>
+            <span className="meta">
+              <T k="home.card3.meta" />
+            </span>
+            <h3>
+              <T k="home.card3.title" />
+            </h3>
             <p>
-              Sign up to volunteer, host a conversation, attend an event, or
-              contribute to voter outreach.
+              <T k="home.card3.summary" />
             </p>
           </div>
         </div>
@@ -66,20 +80,30 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-header center">
-            <h2>Core Priorities</h2>
-            <p>Focused on the issues families talk about at kitchen tables every day.</p>
+            <h2>
+              <T k="home.prioritiesTitle" />
+            </h2>
+            <p>
+              <T k="home.prioritiesSummary" />
+            </p>
           </div>
           <div className="grid three">
-            {priorities.map((priority) => (
+            {priorityTranslationGroups.map((priority) => (
               <article
                 className={`card ${priority.featured ? "featured" : ""}`}
                 key={priority.title}
               >
-                <span className="icon-box">{priority.label.slice(0, 1)}</span>
-                <h3>{priority.title}</h3>
-                <p>{priority.summary}</p>
+                <span className="icon-box">
+                  <TranslatedInitial k={priority.label} />
+                </span>
+                <h3>
+                  <T k={priority.title} />
+                </h3>
+                <p>
+                  <T k={priority.summary} />
+                </p>
                 <ButtonLink href="/issues" variant={priority.featured ? "secondary" : "ghost"}>
-                  Read Policy
+                  <T k="home.readPolicy" />
                 </ButtonLink>
               </article>
             ))}
@@ -91,21 +115,23 @@ export default function HomePage() {
         <div className="container split">
           <CampaignImage
             src={campaignImages.community}
-            alt="Carmen Morales at a community event"
+            altKey="home.communityAlt"
             className="compact"
             sizes="(max-width: 980px) 100vw, 48vw"
           />
           <div className="stack">
-            <h2>Leadership That Shows Up</h2>
+            <h2>
+              <T k="home.leadershipTitle" />
+            </h2>
             <p>
-              This site uses real campaign photography already in the project
-              folder, so the public version feels closer to the actual campaign
-              brand.
+              <T k="home.leadershipSummary" />
             </p>
             <div className="actions">
-              <ButtonLink href="/about">Meet Carmen</ButtonLink>
+              <ButtonLink href="/about">
+                <T k="home.meetCarmen" />
+              </ButtonLink>
               <ButtonLink href="/events" variant="ghost">
-                See Events
+                <T k="home.seeEvents" />
               </ButtonLink>
             </div>
           </div>
