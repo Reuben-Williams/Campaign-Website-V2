@@ -10,7 +10,7 @@ export default function NotFound() {
         </span>
         <h1>Let&apos;s get you back to the campaign.</h1>
         <p className="lead">
-          The page you requested is not available in this demo build.
+          The page you requested is not available.
         </p>
         <div className="actions">
           <ButtonLink href="/">Home</ButtonLink>

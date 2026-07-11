@@ -34,8 +34,8 @@ export default function IssuesPage() {
           <div className="section-header">
             <h2>Issue Areas</h2>
             <p>
-              Each section is ready to connect to detailed policy pages or Supabase
-              content once the campaign has final copy.
+              Each section is ready to connect to detailed policy pages once the
+              campaign has final copy.
             </p>
           </div>
           <div className="grid three">
@@ -45,7 +45,8 @@ export default function IssuesPage() {
                 <h3>{area}</h3>
                 <p>
                   Final policy language can be managed from the data layer now and
-                  moved to Supabase later without redesigning the page.
+                  moved into a managed content workflow later without redesigning
+                  the page.
                 </p>
               </article>
             ))}

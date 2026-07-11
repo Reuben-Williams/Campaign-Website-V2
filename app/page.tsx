@@ -98,9 +98,9 @@ export default function HomePage() {
           <div className="stack">
             <h2>Leadership That Shows Up</h2>
             <p>
-              This demo replaces the generated stock-style placeholders with real
-              campaign photography already in the project folder, so the review
-              version feels closer to the actual campaign brand.
+              This site uses real campaign photography already in the project
+              folder, so the public version feels closer to the actual campaign
+              brand.
             </p>
             <div className="actions">
               <ButtonLink href="/about">Meet Carmen</ButtonLink>

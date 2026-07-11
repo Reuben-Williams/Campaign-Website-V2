@@ -17,10 +17,9 @@ export default function DonatePage() {
           <h1>{pages.donate.title}</h1>
           <p className="lead">{pages.donate.summary}</p>
           <div className="card">
-            <span className="meta">Demo Note</span>
+            <span className="meta">Contribution Note</span>
             <p>
-              Donation processing is intentionally not wired in this static GitHub
-              Pages demo. The page can later connect to the campaign's approved
+              Donation processing will connect to the campaign&apos;s approved
               compliance and payment provider.
             </p>
           </div>

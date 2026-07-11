@@ -42,7 +42,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <p>Paid for by the Committee to Elect Carmen Morales.</p>
-          <p>Demo site prepared for review.</p>
+          <p>Prepared for campaign review.</p>
         </div>
       </div>
     </footer>

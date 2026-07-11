@@ -61,8 +61,8 @@ export default function VolunteerPage() {
             Submit Interest
           </ButtonLink>
           <p>
-            This static demo form is ready to connect to Supabase once the campaign
-            approves the data workflow.
+            This form is ready to connect to the campaign&apos;s approved data
+            workflow.
           </p>
         </form>
       </section>

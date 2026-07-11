@@ -18,7 +18,6 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reuben-williams.github.io/Campaign-Website-V2/"),
   title: {
     default: campaign.name,
     template: `%s | ${campaign.name}`,

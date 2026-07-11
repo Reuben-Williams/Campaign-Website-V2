@@ -31,8 +31,8 @@ export default function AboutPage() {
             <span className="meta">Service</span>
             <h3>Professional Leadership</h3>
             <p>
-              The site is prepared for future CMS and Supabase-backed updates while
-              staying static enough to preview cleanly on GitHub Pages.
+              The site is prepared for future content updates while staying fast,
+              focused, and easy to publish.
             </p>
           </article>
         </div>
